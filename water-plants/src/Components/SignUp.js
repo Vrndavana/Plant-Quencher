@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import PasswordMask from "react-password-mask";
+
 
 const UserForm = ({ values, errors, touched, status }) => {
   const [users, setUsers] = useState([]);
@@ -32,28 +32,27 @@ const UserForm = ({ values, errors, touched, status }) => {
         </label>
         <label htmlFor="password">
           Password
-          <PasswordMask
+          <Field
             id="password"
             name="password"
             placeholder="Enter password"
           />
         </label>
-        <label htmlFor="plants">
-          How Many Plants Do You Have?
-          <Field as="select" className="food-select" name="plants">
-            <option>Select</option>
-            <option value="least">1-5 Plants</option>
-            <option value="average">5-10 Plants</option>
-            <option value="most">10+ Plants</option>
-          </Field>
+        <label htmlFor="repassword">
+          Repeat Password
+        <Field id="repassword" type="text" name="repassword" placeholder="Repeat Password" />
+          {touched.repassword && errors.repassword && (
+            <p className="errors">{errors.repassword}</p>
+          )}
         </label>
+        
         </div>
 
-        <div className="termsBox">
+        {/* <div className="termsBox">
           <Field type="checkbox" name="terms" checked={values.terms} />
           <span className="checkmark" />
           <p>By checking this box, you agree to our Terms of Service.</p>
-        </div>
+        </div> */}
 
         <button type="submit">Sign Up</button>
       </Form>
@@ -67,8 +66,6 @@ const FormikUserForm = withFormik({
       name: props.name || "",
       number: props.number || "",
       password: props.password || "",
-      plants: props.plants || "",
-      terms: props.terms || false
     };
   },
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import PasswordMask from "react-password-mask";
+
 
 const LoginForm = ({ values, errors, touched, status }) => {
   const [users, setUsers] = useState([]);
@@ -32,7 +32,7 @@ const LoginForm = ({ values, errors, touched, status }) => {
         </label>
         <label htmlFor="password">
           Password
-          <PasswordMask
+          <Field
             id="password"
             name="password"
             placeholder="Enter password"
