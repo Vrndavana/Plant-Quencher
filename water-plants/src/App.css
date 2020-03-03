@@ -1,13 +1,11 @@
-body {
-  background-color: rgb(108, 219, 123);
-  box-sizing: border-box;
-}
-
+/* Pre made CSS */
 .App {
   text-align: center;
-  box-sizing: border-box;
+  background-color: #4cf075 ;
+  height: 100vh;
+  overflow: hidden;
 }
-
+/* Changed .App to have height and a background */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -20,8 +18,8 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #cdd48f;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,172 +41,38 @@ body {
   }
 }
 
-div.form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 35%;
-  box-sizing: border-box;
-}
 
-form {
-  background-color: whitesmoke;
-  width: 100%;
-  padding-bottom: 1.7%;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
 
-label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 4%;
-  box-sizing: border-box;
-}
 
-input#name {
-  width: 300px;
-  height: 30px;
-  margin-top: 1%;
-}
-input#number {
-  width: 300px;
-  height: 30px;
-  margin-top: 1%;
-}
-input#password {
-  width: 300px !important;
-  height: 30px;
-  margin-top: 1%;
-}
-input#repassword {
-  width: 300px !important;
-  height: 30px;
-  margin-top: 1%;
-}
-a {
-  display: none;
-}
+/* Custom CSS */
 
-button {
-  height: 40px;
-  width: 300px;
-  background-color: royalblue;
-  color: white;
-  font-size: 1rem;
-  margin-top: 2%;
-  margin-bottom: 3%;
-}
 
-p.errors {
-  color: red;
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 2%;
-}
-
-::placeholder {
-  font-size: 1rem;
-}
-p {
-  font-size: 0.8rem;
-  color: royalblue;
-  margin: 1%;
-}
-
-select.food-select {
-  width: 300px;
-  height: 30px;
-  font-size: 1rem;
-}
-
-.termsBox {
-  display: flex;
-  justify-content: center;
-  margin: 2%;
-}
-
-h1 {
-  color: white;
-}
-
-.signup {
-  color: black;
-}
-
-.signupLogin {
-  display: flex;
+.Sign-N-Log{
+  padding-top: 3%;
+  display:flex;
   justify-content: space-evenly;
+  flex-direction: row;
+}
+.Log{
+  margin: 6% auto;
+  width: 12%;
+  padding:1% 5%;
+  background-color:#f7f7f7b6 ;
+  border-radius: 10px;
 }
 
-.login {
-  color: black;
+.Sign{
+  margin: 6% auto;
+  width: 12%;
+  padding:1% 5%;
+  background-color: #f7f7f7b6;
+  border-radius: 10px;
 }
 
-.loginLabels {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.signupLabels {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.createPlant {
-  background: #209cee;
-  padding: 30px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-
-.plantList {
-  background: #e8e8e8;
-  border-radius: 4px;
-  padding: 5px;
-  width: 40vw;
-  height: 60vh;
-}
-
-.plant {
-  background: #fff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  padding: 3px 10px;
-  font-size: 12px;
-  margin-bottom: 6px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.2rem;
-}
-
-input.input {
-  width: 98%;
-  font-size: 1.2rem;
-  height: 40px;
-}
-
-.delbtn {
-  width: 70px;
-  background-color: red;
- 
-}
-
-.editbtn {
-  width: 70px;
-  background-color: lightgreen;
+.nav-links {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color:rgb(0, 0, 0);
 }

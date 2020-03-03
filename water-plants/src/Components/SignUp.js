@@ -13,7 +13,7 @@ const UserForm = ({ values, errors, touched, status }) => {
   }, [status]);
   return (
     <div className="form">
-      <Form>
+      <Form className="Sign">
         <h1 className="signup">Sign Up</h1>
         <div className="signupLabels">
         <label htmlFor="name">
@@ -32,11 +32,10 @@ const UserForm = ({ values, errors, touched, status }) => {
         </label>
         <label htmlFor="password">
           Password
-          <Field
-            id="password"
-            name="password"
-            placeholder="Enter password"
-          />
+          <Field id="password" type="text" name="password" placeholder="Enter password"/> 
+          {touched.password && errors.password && (
+            <p className="errors">{errors.password}</p>
+          )}
         </label>
         <label htmlFor="repassword">
           Repeat Password
@@ -64,15 +63,21 @@ const FormikUserForm = withFormik({
   mapPropsToValues(props) {
     return {
       name: props.name || "",
-      number: props.number || "",
       password: props.password || "",
+      repassword: props.repassword || "",
+      number: props.number || "",
     };
   },
 
+  // Declare shape and requirement of values object (form state )
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("Please enter your name"),
-    number: Yup.number().required("Please enter your number")
+    // passing a string in required makes a custom inline error msg
+    name: Yup.string().required("Create Username"),
+    password: Yup.string().required("Create Password"),
+    repassword: Yup.string().required("Re-Enter Password"),
+    number: Yup.string().required("Enter Phone Number")
   }),
+
 
   handleSubmit(values, { setStatus, resetForm }) {
     console.log("submitting", values);
