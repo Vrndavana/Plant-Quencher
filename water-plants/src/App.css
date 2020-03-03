@@ -165,3 +165,50 @@ h1 {
   align-items: center;
   box-sizing: border-box;
 }
+
+.createPlant {
+  background: #209cee;
+  padding: 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+.plantList {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+  width: 40vw;
+  height: 60vh;
+}
+
+.plant {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+input.input {
+  width: 98%;
+  font-size: 1.2rem;
+  height: 40px;
+}
+
+.delbtn {
+  width: 70px;
+  background-color: red;
+ 
+}
+
+.editbtn {
+  width: 70px;
+  background-color: lightgreen;
+}
