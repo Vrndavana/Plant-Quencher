@@ -12,6 +12,7 @@ function App() {
     <nav className='navi'>
      <h1 className="PQ-header">  Plant Quencher  </h1>
       <div className="nav-links">
+          <Link className="nav-links" to="/"> Home </Link>
           <Link className="nav-links" to="/SignUp"> SignUp </Link>
           <Link className='nav-links' to="/login"> Log In</Link>
       </div>
