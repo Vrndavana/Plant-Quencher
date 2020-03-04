@@ -46,9 +46,8 @@ body {
 div.form {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   width: 35%;
-  box-sizing: border-box;
+  
 }
 
 form {
@@ -211,4 +210,8 @@ input.input {
 .editbtn {
   width: 70px;
   background-color: lightgreen;
+}
+
+.navButton {
+  background-color: lightpink;
 }

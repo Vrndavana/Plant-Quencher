@@ -6,9 +6,9 @@ export default function Header() {
     <header className="ui centered">
       <h1 className="ui center">Water My Plants</h1>
       <nav>
-        <button>Home</button>
-        <button>Signup</button>
-        <button>Login</button>
+        <button className="navButton">Home</button>
+        <button className="navButton">Signup</button>
+        <button className="navButton">Login</button>
       </nav>
     </header>
   );

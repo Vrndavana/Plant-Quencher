@@ -36,15 +36,12 @@ function CreatePlant() {
   const [plants, setPlants] = useState([
     {
       text: "Succulent",
-      
     },
     {
       text: "Pink Jasmine",
-     
     },
     {
       text: "Draco",
-      
     }
   ]);
 
@@ -55,8 +52,8 @@ function CreatePlant() {
 
   const editPlant = text => {
       const newPlants = [...plants, {text}];
-      setPlants(newPlants)
-  }
+      setPlants(newPlants);
+  };
 
   const deletePlant = index => {
     const newPlants = [...plants];
