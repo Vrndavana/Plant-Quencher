@@ -35,8 +35,8 @@ const UserForm = ({ values, errors, touched, status }) => {
           )}
         </label>
         <label htmlFor="repassword">
-          Repeat Password
-        <Field id="repassword" type="text" name="repassword" placeholder="Repeat Password" />
+          Retype Password
+        <Field id="repassword" type="text" name="repassword" placeholder="Retype Password" />
           {touched.repassword && errors.repassword && (
             <p className="errors">{errors.repassword}</p>
           )}
