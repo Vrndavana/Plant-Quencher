@@ -13,7 +13,7 @@ const LoginForm = ({ values, errors, touched, status }) => {
   }, [status]);
   return (
     <div className="form">
-      <Form>
+      <Form className="Log">
         <h1 className="login">Login</h1>
         <div className="loginLabels">
         <label htmlFor="name">
@@ -32,11 +32,10 @@ const LoginForm = ({ values, errors, touched, status }) => {
         </label>
         <label htmlFor="password">
           Password
-          <Field
-            id="password"
-            name="password"
-            placeholder="Enter password"
-          />
+          <Field id="password" name="password" placeholder="Enter password"/>
+          {touched.password && errors.password && (
+            <p className="errors">{errors.password}</p>
+          )}
         </label>
         </div>
         
@@ -44,7 +43,7 @@ const LoginForm = ({ values, errors, touched, status }) => {
         <button type="submit">Login</button>
         <br></br>
         <br></br>
-        <p>Forgot Password</p>
+        <a href="https://soundcloud.com/v-hines"> Forgot Password?</a>
       </Form>
     </div>
   );
@@ -61,7 +60,8 @@ const FormikUserForm = withFormik({
 
   validationSchema: Yup.object().shape({
     name: Yup.string().required("Please enter your name"),
-    number: Yup.number().required("Please enter your number")
+    number: Yup.number().required("Please enter your number"),
+    password: Yup.string().required("Please enter your password")
   }),
 
   handleSubmit(values, { setStatus, resetForm }) {
