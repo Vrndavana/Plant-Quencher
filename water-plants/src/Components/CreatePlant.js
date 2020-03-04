@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function Plant({ plant, index, editPlant, deletePlant }) {
   return (
     <div className="plant">
@@ -11,7 +10,6 @@ function Plant({ plant, index, editPlant, deletePlant }) {
     </div>
   );
 }
-
 function PlantForm({ addPlant }) {
   const [value, setValue] = useState("");
   const handleSubmit = e => {
@@ -44,24 +42,19 @@ function CreatePlant() {
       text: "Draco",
     }
   ]);
-
   const addPlant = text => {
     const newPlants = [...plants, { text }];
     setPlants(newPlants);
   };
-
   const editPlant = text => {
       const newPlants = [...plants, {text}];
-      setPlants(newPlants);
-  };
-
+      setPlants(newPlants)
+  }
   const deletePlant = index => {
     const newPlants = [...plants];
     newPlants.splice(index, 1);
     setPlants(newPlants);
   };
-
-
   return (
     <div className="createPlant">
       <div className="plantList">
@@ -80,5 +73,4 @@ function CreatePlant() {
     </div>
   );
 }
-
 export default CreatePlant;
