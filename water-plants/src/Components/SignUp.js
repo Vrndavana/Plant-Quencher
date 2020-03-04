@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-
-
 const UserForm = ({ values, errors, touched, status }) => {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     console.log("status has changed", status);
     status && setUsers(users => [...users, status]);
@@ -44,21 +41,17 @@ const UserForm = ({ values, errors, touched, status }) => {
             <p className="errors">{errors.repassword}</p>
           )}
         </label>
-        
         </div>
-
         {/* <div className="termsBox">
           <Field type="checkbox" name="terms" checked={values.terms} />
           <span className="checkmark" />
           <p>By checking this box, you agree to our Terms of Service.</p>
         </div> */}
-
         <button type="submit">Sign Up</button>
       </Form>
     </div>
   );
 };
-
 const FormikUserForm = withFormik({
   mapPropsToValues(props) {
     return {
@@ -68,7 +61,6 @@ const FormikUserForm = withFormik({
       number: props.number || "",
     };
   },
-
   // Declare shape and requirement of values object (form state )
   validationSchema: Yup.object().shape({
     // passing a string in required makes a custom inline error msg
@@ -77,8 +69,6 @@ const FormikUserForm = withFormik({
     repassword: Yup.string().required("Re-Enter Password"),
     number: Yup.string().required("Enter Phone Number")
   }),
-
-
   handleSubmit(values, { setStatus, resetForm }) {
     console.log("submitting", values);
     axios
@@ -91,5 +81,4 @@ const FormikUserForm = withFormik({
       .catch(err => console.log(err.response));
   }
 })(UserForm);
-
 export default FormikUserForm;

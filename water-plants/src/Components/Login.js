@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-
-
 const LoginForm = ({ values, errors, touched, status }) => {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     console.log("status has changed", status);
     status && setUsers(users => [...users, status]);
@@ -38,8 +35,6 @@ const LoginForm = ({ values, errors, touched, status }) => {
           )}
         </label>
         </div>
-        
-
         <button type="submit">Login</button>
         <br></br>
         <br></br>
@@ -48,7 +43,6 @@ const LoginForm = ({ values, errors, touched, status }) => {
     </div>
   );
 };
-
 const FormikUserForm = withFormik({
   mapPropsToValues(props) {
     return {
@@ -57,13 +51,11 @@ const FormikUserForm = withFormik({
       password: props.password || "",
     };
   },
-
   validationSchema: Yup.object().shape({
     name: Yup.string().required("Please enter your name"),
     number: Yup.number().required("Please enter your number"),
     password: Yup.string().required("Please enter your password")
   }),
-
   handleSubmit(values, { setStatus, resetForm }) {
     console.log("submitting", values);
     axios
@@ -76,5 +68,4 @@ const FormikUserForm = withFormik({
       .catch(err => console.log(err.response));
   }
 })(LoginForm);
-
 export default FormikUserForm;
