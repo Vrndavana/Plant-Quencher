@@ -15,16 +15,9 @@ const LoginForm = ({ values, errors, touched, status }) => {
         <div className="loginLabels">
         <label htmlFor="name">
           Name
-          <Field id="name" type="text" name="name" placeholder="Your name" />
-          {touched.name && errors.name && (
-            <p className="errors">{errors.name}</p>
-          )}
-        </label>
-        <label htmlFor="number">
-          Phone Number
-          <Field id="number" type="text" name="number" placeholder="Your phone number" />
-          {touched.number && errors.number && (
-            <p className="errors">{errors.number}</p>
+          <Field id="username" type="text" name="username" placeholder="Your name" />
+          {touched.username && errors.username && (
+            <p className="errors">{errors.username}</p>
           )}
         </label>
         <label htmlFor="password">
@@ -38,7 +31,7 @@ const LoginForm = ({ values, errors, touched, status }) => {
         <button type="submit">Login</button>
         <br></br>
         <br></br>
-        <a href="https://soundcloud.com/v-hines"> Forgot Password?</a>
+        <a href="https://dearselfskincare.com/"> Forgot Password?</a>
       </Form>
     </div>
   );
@@ -46,20 +39,18 @@ const LoginForm = ({ values, errors, touched, status }) => {
 const FormikUserForm = withFormik({
   mapPropsToValues(props) {
     return {
-      name: props.name || "",
-      number: props.number || "",
+      username: props.username || "",
       password: props.password || "",
     };
   },
   validationSchema: Yup.object().shape({
     name: Yup.string().required("Please enter your name"),
-    number: Yup.number().required("Please enter your number"),
     password: Yup.string().required("Please enter your password")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     console.log("submitting", values);
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post("https://wmpbackend.herokuapp.com/api/auth/login", values)
       .then(res => {
         console.log("success", res);
         setStatus(res.data);
