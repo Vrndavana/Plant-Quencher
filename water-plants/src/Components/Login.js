@@ -11,7 +11,7 @@ const LoginForm = ({ values, errors, touched, status }) => {
   return (
     <div className="form">
       <Form className="Log">
-        <h1 className="login">Login</h1>
+        <h2 className="login">Login</h2>
         <div className="loginLabels">
         <label htmlFor="name">
           Name
