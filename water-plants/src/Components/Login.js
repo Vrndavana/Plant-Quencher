@@ -13,9 +13,9 @@ const LoginForm = ({ values, errors, touched, status }) => {
       <Form className="Log">
         <h2 className="login">Login</h2>
         <div className="loginLabels">
-        <label htmlFor="name">
-          Name
-          <Field id="username" type="text" name="username" placeholder="Your name" />
+        <label htmlFor="username">
+          Username
+          <Field id="username" type="text" name="username" placeholder="Your username" />
           {touched.username && errors.username && (
             <p className="errors">{errors.username}</p>
           )}
@@ -44,7 +44,7 @@ const FormikUserForm = withFormik({
     };
   },
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("Please enter your name"),
+    username: Yup.string().required("Please enter your username"),
     password: Yup.string().required("Please enter your password")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
