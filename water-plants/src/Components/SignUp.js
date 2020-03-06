@@ -14,8 +14,8 @@ const UserForm = ({ values, errors, touched, status }) => {
         <h2 className="signup">Sign Up</h2>
         <div className="signupLabels">
         <label htmlFor="username">
-          Name
-          <Field id="username" type="text" name="username" placeholder="Your name" />
+          Username
+          <Field id="username" type="text" name="username" placeholder="Your username" />
           {touched.username && errors.username && (
             <p className="errors">{errors.username}</p>
           )}
