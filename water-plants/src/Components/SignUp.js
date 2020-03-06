@@ -13,20 +13,29 @@ const UserForm = ({ values, errors, touched, status }) => {
       <Form className="Sign">
         <h1 className="signup">Sign Up</h1>
         <div className="signupLabels">
-        <label htmlFor="name">
+        <label htmlFor="username">
           Name
-          <Field id="name" type="text" name="name" placeholder="Your name" />
-          {touched.name && errors.name && (
-            <p className="errors">{errors.name}</p>
+          <Field id="username" type="text" name="username" placeholder="Your name" />
+          {touched.username && errors.username && (
+            <p className="errors">{errors.username}</p>
           )}
         </label>
-        <label htmlFor="number">
+        <label htmlFor="phone">
           Phone Number
-          <Field id="number" type="text" name="number" placeholder="Your phone number" />
-          {touched.number && errors.number && (
-            <p className="errors">{errors.number}</p>
+          <Field id="phone" type="text" name="phone" placeholder="Your phone number" />
+          {touched.phone && errors.phone && (
+            <p className="errors">{errors.phone}</p>
           )}
         </label>
+        <label htmlFor="email">
+          E-mail
+          <Field id="email" type="text" name="email" placeholder="Your email address" />
+          {touched.email && errors.email && (
+            <p className="errors">{errors.email}</p>
+          )}
+        </label>
+
+
         <label htmlFor="password">
           Password
           <Field id="password" type="text" name="password" placeholder="Enter password"/> 
@@ -55,24 +64,25 @@ const UserForm = ({ values, errors, touched, status }) => {
 const FormikUserForm = withFormik({
   mapPropsToValues(props) {
     return {
-      name: props.name || "",
+      username: props.username || "",
       password: props.password || "",
-      repassword: props.repassword || "",
-      number: props.number || "",
+      phone: props.phone || "",
+      email: props.email || "",
     };
   },
   // Declare shape and requirement of values object (form state )
   validationSchema: Yup.object().shape({
     // passing a string in required makes a custom inline error msg
-    name: Yup.string().required("Create Username"),
+    username: Yup.string().required("Create Username"),
     password: Yup.string().required("Create Password"),
     repassword: Yup.string().required("Re-Enter Password"),
-    number: Yup.string().required("Enter Phone Number")
+    phone: Yup.string().required("Enter Phone Number"),
+    email: Yup.string().required("Enter email address")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     console.log("submitting", values);
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post("https://wmpbackend.herokuapp.com/api/auth/register", values)
       .then(res => {
         console.log("success", res);
         setStatus(res.data);

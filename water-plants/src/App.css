@@ -46,32 +46,29 @@
 .Log{
   margin: 6% auto;
   width: 12%;
-  padding:1% 5%;
-  background-color:#f7f7f7b6 ;
+  padding:1% 6%;
+  background-color:whitesmoke ;
   border-radius: 10px;
 }
 .Sign{
   margin: 6% auto;
   width: 12%;
-  padding:1% 5%;
-  background-color: #f7f7f7b6;
+  padding:1% 6%;
+  background-color: whitesmoke;
   border-radius: 10px;
 }
 .nav-links {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
-  text-decoration: none;
-  color:rgb(0, 0, 0);
+  color:green;
+  font-size: 1.2rem;
 }
-
-form {
-  background-color: whitesmoke;
-  width: 100%;
-  padding-bottom: 1.7%;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  border-radius: 6px;
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  color: green;
 }
 
 label {
@@ -81,13 +78,24 @@ label {
   margin-bottom: 4%;
 }
 
-input#name {
+input#username {
+  width: 300px;
+  height: 30px;
+  margin-top: 1%;
+}
+input#username {
   width: 300px;
   height: 30px;
   margin-top: 1%;
 }
 
-input#number {
+input#email {
+  width: 300px;
+  height: 30px;
+  margin-top: 1%;
+}
+
+input#phone {
   width: 300px;
   height: 30px;
   margin-top: 1%;
@@ -170,4 +178,53 @@ h1 {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+}
+
+.createPlant {
+  padding: 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+.plantList {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 9px;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 40vw;
+  height: 70vh;
+}
+
+.plant {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+input.input {
+  width: 99%;
+  font-size: 1.2rem;
+  height: 40px;
+  color: black;
+}
+
+.delbtn {
+  width: 70px;
+  background-color: red;
+
+}
+
+.image {
+  width: 65vw;
+  height: 70vh;
 }

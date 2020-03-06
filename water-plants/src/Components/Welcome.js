@@ -3,8 +3,9 @@ export default function WelcomePage() {
   return (
     <section className="welcome-page">
       <header>
-        <h1>Welcome to Plant Quencher3.0! Log in or Sign Up!</h1>
-        <h4>Show your plants you care</h4>
+        <h2>Never forget to water your plants again!</h2>
+    
+        <img className="image" src="https://images.unsplash.com/photo-1497990571654-77aa8ec36038?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2834&q=80" />
       </header>
     </section>
   );
