@@ -11,7 +11,7 @@ const UserForm = ({ values, errors, touched, status }) => {
   return (
     <div className="form">
       <Form className="Sign">
-        <h1 className="signup">Sign Up</h1>
+        <h2 className="signup">Sign Up</h2>
         <div className="signupLabels">
         <label htmlFor="username">
           Name

@@ -1,7 +1,7 @@
 /* Pre made CSS */
 .App {
   text-align: center;
-  background-color: #4cf075 ;
+  background-color: rgb(255, 249, 247) ;
   height: 100vh;
   overflow: hidden;
 }
@@ -61,14 +61,15 @@
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
-  color:green;
+  color: rgb(18, 136, 122);
   font-size: 1.2rem;
 }
 h1 {
   font-size: 2rem;
+  color: rgb(18, 136, 122)!important;
 }
 h2 {
-  color: green;
+  color: rgb(121, 168, 244)!important;
 }
 
 label {
@@ -155,9 +156,7 @@ select.food-select {
   justify-content: center;
   margin: 2%;
 }
-h1 {
-  color: white;
-}
+
 .signup {
   color: black;
 }
@@ -189,7 +188,7 @@ h1 {
 
 
 .plantList {
-  background: #e8e8e8;
+  background: whitesmoke;
   border-radius: 4px;
   padding: 9px;
   padding-left: 2%;
@@ -226,5 +225,5 @@ input.input {
 
 .image {
   width: 60vw;
-  height: 70vh;
+  height: 75vh;
 }
